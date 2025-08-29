@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>PhishGuard Local</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <h1>PhishGuard Local</h1>
+    <p>Paste an email (raw, HTML, or text). Click Analyze.</p>
+    <div class="controls">
+      <label><input type="checkbox" id="shareBody"> Share body with AI analysis</label>
+    </div>
+    <textarea id="email" placeholder="Paste email here"></textarea>
+    <div class="row">
+      <button id="analyze">Analyze</button>
+      <span id="status"></span>
+    </div>
+
+    <div id="result" class="card hidden">
+      <div class="risk">
+        <span id="verdict"></span>
+        <span id="score"></span>
+      </div>
+      <div class="cols">
+        <div class="col">
+          <h3>Feedback</h3>
+          <ul id="feedback"></ul>
+        </div>
+        <div class="col">
+          <h3>Signals</h3>
+          <pre id="signals"></pre>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      The app shows only risk score, feedback, and signals. External providers are used internally.
+    </footer>
+  </div>
+  <script src="/static/script.js" type="module"></script>
+</body>
+</html>
